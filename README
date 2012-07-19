@@ -1,0 +1,27 @@
+TODO:
+1. Find bins that belong to the best scoring paths and view them in the browser.
+2. Incorporate previous and next bins as possible sources.
+
+
+We have two problems:
+
+1. There is noise (especially with respect to the empty state). Sometimes in a long region that consists of one state,
+there are holes of empty states with posterior probabilities almost equal to the posteriors of the other state.
+
+2. There are a lot of fluctuations in the size of the regions that can be attributed to expansions, contractions or just random noise.
+
+TODO:
+For each source look for possible target segments. For example, enhancer that transforms to empty state, etc.
+
+
+June 25:
+
+DREM for histone modifications:
+
+1. Call enhancers: take the bin with the highest signal within an enhancer segment. Call it center of the enhancer.
+2. Take 2kb window around the center.
+3. Take the raw signal for all marks in the window. Normalize it by the read depth.
+4. Condition on one mark. Input to DREM. Treat histone mark levels as expression levels. Look for splits.
+5. Next step: model the marks in the window with a multi-variate distribution. Look for splits.
+
+This file was modified by PyCharm 2.5.2 for binding GitHub repository
